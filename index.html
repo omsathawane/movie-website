@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Movie App</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Josefin Sans", sans-serif;
+        box-sizing: border-box;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: #2516ca;
+      }
+
+      .logo {
+        color: rgb(247, 242, 242);
+        font-size: 35px;
+        letter-spacing: 1px;
+        cursor: pointer;
+      }
+
+      nav ul {
+        display: flex;
+        list-style-type: none;
+      }
+
+      nav ul li {
+        margin-right: 10px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: capitalize;
+        padding: 5px;
+        cursor: pointer;
+      }
+
+      nav ul li a:hover {
+        background-color: white;
+        color:#0b0b0b;
+        border-radius: 5px;
+      }
+
+      .search {
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+      }
+
+      .search:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="logo">Movie.<span>Org...</span></h1>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#" id="categories-btn">Categories</a></li>
+          <li><a href="#">join us</a></li>
+        </ul>
+
+      </nav>
+      <form id="form">
+        <input type="text" id="search" class="search" placeholder="Search" />
+        
+      </form>
+    </header>
+    <main id="main"></main>
+    <script src="script.js"></script>
+  </body>
+</html>

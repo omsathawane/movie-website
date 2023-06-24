@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4435e1;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+
+    button[type="submit"],
+    button[type="reset"] {
+      background-color: #4435e1;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover,
+    button[type="reset"]:hover {
+      background-color: #8052d5;
+    }
+
+    #result {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #ffffff;
+    }
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: "Josefin Sans", sans-serif;
+        box-sizing: border-box;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: #2516ca;
+      }
+
+      .logo {
+        color: rgb(247, 242, 242);
+        font-size: 35px;
+        letter-spacing: 1px;
+        cursor: pointer;
+      }
+
+      nav ul {
+        display: flex;
+        list-style-type: none;
+      }
+
+      nav ul li {
+        margin-right: 10px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: capitalize;
+        padding: 5px;
+        cursor: pointer;
+      }
+
+      nav ul li a:hover {
+        background-color: white;
+        color:#0b0b0b;
+        border-radius: 5px;
+      }
+
+      .search {
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+      }
+
+      .search:focus {
+        outline: none;
+      }
+  </style>
+   <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="joinus.html">join us</a></li>
+      </ul>
+    </nav>
+  </header>
+</head>
+<body>
+  <h1>Join Us</h1>
+  <form id="joinForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" required>
+
+    <button type="submit">Join</button>
+    <button type="reset" onclick="resetForm()">Reset</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const joinForm = document.getElementById('joinForm');
+    const resultDiv = document.getElementById('result');
+
+    joinForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const phone = document.getElementById('phone').value;
+      resultDiv.innerHTML = `
+        <h2>Submitted Information:</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Password:</strong> ${password}</p>
+        <p><strong>Phone Number:</strong> ${phone}</p>
+      `;
+      joinForm.reset();
+      resultDiv.innerHTML += "<p>THANKS FOR JOINING US</p>";
+    });
+
+    function resetForm() {
+      joinForm.reset();
+      resultDiv.innerHTML = '';
+    }
+  </script>
+</body>
+</html>
